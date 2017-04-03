@@ -13,9 +13,9 @@ class Board
     space_open?(row, col) && (0..2).include?(row) && (0..2).include?(col)
   end
 
-  def make_move(row, col, marker)
-    if space_open?(row, col)    
-      @spaces[row][col] = marker 
+  def record_move(row, col, marker)
+    if valid_move?(row, col)
+      @spaces[row][col] = marker
     end
   end
 
@@ -38,7 +38,7 @@ class Board
   def diagonals
     [
       [spaces[0][0], spaces[1][1], spaces[2][2]],
-      [spaces[2][0], spaces[1][1], spaces[0][2]],  
+      [spaces[2][0], spaces[1][1], spaces[0][2]],
     ]
   end
 end

@@ -23,7 +23,7 @@ class Game < ApplicationRecord
   end
 
   def markers_directory
-    Rails.root.join('app', 'assets', 'images', 'markers') 
+    Rails.root.join('app', 'assets', 'images', 'markers')
   end
 
   def available_markers
@@ -34,15 +34,19 @@ class Game < ApplicationRecord
   def used_markers
     players.map(&:marker)
   end
-   
+
+  def make_move(row, col)
+    board.record_move(row, col, current_player.marker)
+  end
+
   def over?
     winner? || draw?
   end
 
   def winner?
-    board.winning_combinations.each do |combo|
-      if combo.uniq.length == 1
-        return combo unless combo.all?(&:nil?)
+    board.winning_combinations.each do |combination|
+      if combination.uniq.length == 1
+        return combination unless combination.all?(&:nil?)
       end
     end
     false
