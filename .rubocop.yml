@@ -1,0 +1,26 @@
+AllCops:
+  Exclude:
+    - Gemfile
+    - db/schema.rb
+    - db/seeds.rb
+    - db/structure.sql
+    - db/migrate/*
+    - bin/*
+    - lib/tasks/*
+    - lib/assets/*
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 160
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+

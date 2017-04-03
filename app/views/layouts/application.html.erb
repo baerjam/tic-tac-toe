@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tictactoe</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600" rel="stylesheet">
+  </head>
+
+  <body>
+    <section class="main">
+      <h1>Tic-Tac-Toe<span class="sub-head">with food!</span></h1>
+      <%= yield %>
+    </section>
+    <footer>
+      View the source at <%= link_to 'GitHub', 'https://github.com/baerjam/tic-tac-toe' %>
+    </footer>
+  </body>
+</html>

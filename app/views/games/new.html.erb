@@ -1,0 +1,18 @@
+<div class="new-game-button">
+  <%= form_for @game do |f| %>
+   <%= f.submit "Start a new game" %>
+  <% end %>
+</div>
+
+<section class="board" id="board">
+  <table>
+    <% Board.new.spaces.each_with_index do |row, row_index| %>
+      <tr>
+        <% row.each_with_index do |marker, column_index| %>
+          <td class="content first border-bottom"></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>
+

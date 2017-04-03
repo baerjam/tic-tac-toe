@@ -1,0 +1,38 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.marker-icon {
+  width: 48px;
+}
+
+.player-icon {
+  width: 30px;
+}
+
+.board {
+  table {
+    border: 5px solid $base-font-color;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+      height: 150px;
+      width: 150px;
+
+      &.first {
+        border-right: 5px solid $base-font-color;
+      }
+      &.border-bottom {
+        border-bottom: 5px solid $base-font-color;
+      }
+      a {
+        display: block;
+        width: 100%;
+        padding: 50px 0px;
+      }
+    }
+   }
+}

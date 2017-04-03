@@ -1,0 +1,7 @@
+<%= render 'board', game: @game %>
+
+<section class="game-actions">
+  <%= button_to 'Start a new Game!', games_path, class: 'button' %>
+  <%= link_to 'Quit', game_path(@game), method: :delete %>
+</section>
+

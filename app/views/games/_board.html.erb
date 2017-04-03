@@ -1,0 +1,39 @@
+<section class="board" id="board">
+ 
+  <% if @game.over? %>
+    <% if @game.winner? %>
+      <div class="notice-ribbon winner">
+        <%= @game.current_player.name %> Wins!
+      </div>
+    <% elsif @game.draw? %>
+      <div class="notice-ribbon draw">
+        Its a draw
+      </div>
+    <% end %>
+  <% else %>
+    <div class="notice-ribbon">
+      <div class="player left active">
+        <%= image_tag("markers/#{game.players.first.marker}", class: 'player-icon') %>
+        <%= content_tag(:span, game.players.first.name, class: 'bold') %>
+        <%= players_turn?(game.players.first, game.current_player) %>
+      </div>
+      <div class="player right ">
+         <%= players_turn?(game.players.second, game.current_player) %>
+        <%= content_tag(:span, game.players.second.name, class: 'bold') %>
+        <%= image_tag("markers/#{game.players.second.marker}", class: 'player-icon') %>        
+       
+      </div>
+    </div>
+  <% end %>
+  
+  <table>
+    <% game.board.spaces.each_with_index do |row, row_index| %>
+      <tr>
+        <% row.each_with_index do |marker, column_index| %>
+          <td class="content first border-bottom"><%= board_cell(marker, "#{row_index}:#{column_index}") %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>
+

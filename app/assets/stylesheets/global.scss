@@ -1,0 +1,174 @@
+$base-font-color: #646464 !default;
+$base-heading-color: #585858 !default;
+$base-font-size: 1em;
+$base-border-radius: .25rem !default;
+
+// Buttons
+$button-base-background: #f3783c !default;
+$button-base-color: #fff !default;
+$button-font-weight: 600 !default;
+$button-line-height: normal !default;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: rgba(0,0,0,0.15);
+$button-base-x-padding: .5rem !default;
+$button-base-y-padding: .5rem !default;
+
+body {
+  color: $base-font-color;
+  background-color: #fbfbfb;
+  font-family: 'Lato',Helvetica,Arial,sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  color: $base-heading-color;
+  .sub-head{
+    font-size: .5em;
+    font-style: italic;
+    color: #c4c4c4;
+    font-weight: normal;
+  }
+}
+
+section.main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+
+section.main::after {
+    clear: both;
+    content: "";
+    display: block
+}
+
+section.main div.main-wrapper {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%
+}
+
+section.main div.main-wrapper:last-child {
+    margin-right: 0
+}
+
+@media screen and (min-width: 900px) {
+    section.main div.main-wrapper {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 65.88078%;
+        margin-left: 17.05961%
+    }
+    section.main div.main-wrapper:last-child {
+        margin-right: 0
+    }
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: .9em;
+}
+
+.game-actions {
+  margin-top: 50px;
+  text-align: center;
+ 
+}
+
+.meta {
+  font-size: 0.8em;
+  color: #aa9c84
+}
+
+.meta a {
+  color: inherit
+}
+
+.new-game-button {
+  margin-bottom: 15px;
+}
+
+.active-text {
+  padding: 0 10px;
+  color: green;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.notice-ribbon {
+  height: 46px;
+  margin-bottom: 10px;
+
+  &.winner {
+    color: #fff;
+    background-color: green;
+    text-align: center;
+  }
+
+  &.draw {
+    background-color: #f5efe6;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .player {
+  }
+  
+  .left {
+    vertical-align: middle;
+    text-align: left;
+    height: 100%;
+    width: 50%;
+    float: left;
+  }
+
+  .right {
+    text-align: right;
+    width: 50%;
+    float: right;
+    height: 100%;
+  }
+}
+
+@mixin button-size($y-padding, $x-padding, $font-size, $border-radius){
+  padding: $y-padding $x-padding;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: none;
+  border: none;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: $button-base-color;
+  background-color: $button-base-background;
+  border-color: $button-border-color;
+  @include button-size($button-base-y-padding, $button-base-x-padding, $base-font-size, $base-border-radius);
+
+  &:hover {
+    border-bottom-width: 2px;
+    border-color: $button-border-color;
+  }
+}
