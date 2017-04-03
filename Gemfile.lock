@@ -216,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  capistrano
   capistrano-rails
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
