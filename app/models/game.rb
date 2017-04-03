@@ -18,23 +18,6 @@ class Game < ApplicationRecord
     end
   end
 
-  def set_default_current_player
-    @current_player, @other_player = players[0], players[1]
-  end
-
-  def markers_directory
-    Rails.root.join('app', 'assets', 'images', 'markers')
-  end
-
-  def available_markers
-    all_markers = Dir["#{markers_directory}/*.svg"].map { |f| File.basename f }
-    all_markers - used_markers
-  end
-
-  def used_markers
-    players.map(&:marker)
-  end
-
   def make_move(row, col)
     board.record_move(row, col, current_player.marker)
   end
@@ -58,5 +41,24 @@ class Game < ApplicationRecord
 
   def switch_players
     @current_player, @other_player = @other_player, @current_player
+  end
+
+  private
+
+  def markers_directory
+    Rails.root.join('app', 'assets', 'images', 'markers')
+  end
+
+  def available_markers
+    all_markers = Dir["#{markers_directory}/*.svg"].map { |f| File.basename f }
+    all_markers - used_markers
+  end
+
+  def used_markers
+    players.map(&:marker)
+  end
+
+  def set_default_current_player
+    @current_player, @other_player = players[0], players[1]
   end
 end
