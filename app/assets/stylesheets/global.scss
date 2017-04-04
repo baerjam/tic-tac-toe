@@ -149,7 +149,9 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   border-bottom-width: 2px;
   cursor: pointer;
@@ -159,7 +161,10 @@ button,
   line-height: $button-line-height;
   text-align: center;
   text-decoration: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   color: $button-base-color;
