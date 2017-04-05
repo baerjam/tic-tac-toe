@@ -2,6 +2,7 @@ $base-font-color: #646464 !default;
 $base-heading-color: #585858 !default;
 $base-font-size: 1em;
 $base-border-radius: .25rem !default;
+$light-gray: #c4c4c4;
 
 // Buttons
 $button-base-background: #f3783c !default;
@@ -72,6 +73,11 @@ footer {
   margin-top: 50px;
   text-align: center;
   font-size: .9em;
+
+  .attribute {
+    font-size: .8em;
+    color: $light-gray; 
+  }
 }
 
 .game-actions {
