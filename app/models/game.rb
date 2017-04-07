@@ -59,6 +59,7 @@ class Game < ApplicationRecord
   end
 
   def set_default_current_player
-    @current_player, @other_player = players[0], players[1]
+    @current_player = players[0]
+    @other_player   = players[1]
   end
 end

@@ -38,7 +38,7 @@ class BoardTest < ActiveSupport::TestCase
 
   def fill_board
     @board.spaces.each_with_index do |row, row_index|
-      row.each_with_index do |colunm, column_index|
+      row.each_with_index do |_colunm, column_index|
         @board.spaces[row_index][column_index] = 'X'
       end
     end 
